@@ -1,17 +1,8 @@
-/* eslint-disable */
 
-// include jsdom for DOM use in tests on travis
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(``, {
-    url: 'http://localhost:5500'
-});
-global.window = window;
-global.document = window.document;
-global.FormData = window.FormData;
-global.localStorage = window.localStorage;
-global.sessionStorage = window.sessionStorage;
-global.URLSearchParams = window.URLSearchParams;
+import App from './components/App.js';
 
-require = require('esm')(module);
-module.exports = require('./tests.js');
+const app = new App();
+const appDOM = app.render();
+
+const root = document.getElementById('app');
+root.appendChild(appDOM);

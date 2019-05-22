@@ -1,11 +1,10 @@
-function itemCompleted(item) {
+function template(item) {
     let checked = '';
 
     if(item.completed) {
         checked = 'checked';
         
     }
-
     return /*html*/`
         <li>
             <input type="checkbox" ${checked}>${item.item}
@@ -13,4 +12,4 @@ function itemCompleted(item) {
     `;
 }
 
-export default itemCompleted;
+export default template;
