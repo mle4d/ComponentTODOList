@@ -12,11 +12,17 @@ class App extends component {
 
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
+
+        const addTodo = new AddTodo({
+            onAdd: (newTodo) => {
+                todos.unshift(newTodo);
+                todoList.update({todos});
+            }
+        });
+        const addTodoDOM = addTodo.render();
+        main.appenChild(addTodoDom);
     }
 }
-//additem stuff will go here//
-//
-//
 const todoList = new TodoList({
     todos, 
     onRemove: (todoToRemove) => {
@@ -26,10 +32,10 @@ const todoList = new TodoList({
         todoList.update({ todos });
     }
 });
-const todoListDOM = todoList.render();
-main.appendChild(todoListDOM);
+    const todoListDOM = todoList.render();
+    main.appendChild(todoListDOM);
 
-return dom;
+    return dom;
 }
 
 renderTemplate() {
