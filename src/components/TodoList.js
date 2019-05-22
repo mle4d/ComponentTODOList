@@ -19,7 +19,7 @@ class TodoList extends component {
 
     renderTemplate() {
         return /*html*/`
-            <ul id="foods"></ul>
+            <ul id="todos"></ul>
         `;
     }
 }
