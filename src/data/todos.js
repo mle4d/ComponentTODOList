@@ -1,4 +1,4 @@
-const list = [
+const todos = [
     {
         item: 'chikn',
         completed: true
@@ -21,4 +21,4 @@ const list = [
     },
 ];
 
-export default list;
+export default todos;

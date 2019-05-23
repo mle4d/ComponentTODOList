@@ -1,6 +1,8 @@
 import component from './component.js';
 import Header from './Header.js';
+import AddTodo from './AddTodo.js';
 import TodoList from './TodoList.js';
+import todos from '../data/todos.js/index.js';
 
 class App extends component {
 
@@ -16,30 +18,29 @@ class App extends component {
         const addTodo = new AddTodo({
             onAdd: (newTodo) => {
                 todos.unshift(newTodo);
-                todoList.update({todos});
+                todoList.update({ todos });
             }
         });
         const addTodoDOM = addTodo.render();
-        main.appenChild(addTodoDom);
+        main.appenChild(addTodoDOM);
+
+        const todoList = new TodoList({
+            todos, 
+            onRemove: (todoToRemove) => {
+                const index = todos.indexOf(todoToRemove);
+                todos.splice(index, 1);
+
+                todoList.update({ todos });
+            }
+        });
+        const todoListDOM = todoList.render();
+        main.appendChild(todoListDOM);
+
+        return dom;
     }
-}
-const todoList = new TodoList({
-    todos, 
-    onRemove: (todoToRemove) => {
-        const index = todos.indexOf(todoToRemove);
-        todos.splice(index, 1);
 
-        todoList.update({ todos });
-    }
-});
-    const todoListDOM = todoList.render();
-    main.appendChild(todoListDOM);
-
-    return dom;
-}
-
-renderTemplate() {
-    return /*html*/`
+    renderTemplate() {
+        return /*html*/`
         <div>
             <!-- Header goes here -->
             <main>
