@@ -13,7 +13,7 @@ class AddTodo extends component {
             const formData = new FormData(form);
 
             const newTodo = {
-                Item: formData.get ('Item')
+                item: formData.get ('item')
             };
             onAdd(newTodo);
 
@@ -24,7 +24,7 @@ class AddTodo extends component {
     renderTemplate() {
         return /*html*/`
             <form class="add-todo">
-                <label>Item: <input name="Item"></label>
+                <label>Item: <input name="item"></label>
                 <button>Add</button>
             </form>
             `;

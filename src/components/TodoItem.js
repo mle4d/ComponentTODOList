@@ -17,10 +17,12 @@ class TodoItem extends component {
 
     renderTemplate() {
         const todo = this.props.todo;
+        console.log(todo);
 
         return /*html*/`
         <li>
-            <h2 class="name">${todo.name}</h2>
+            <h2 class="name">${todo.item}</h2>
+            <input type="checkbox" checked>done
             <button class="remove-button">X</button>
         </li>
         `;

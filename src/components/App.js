@@ -2,7 +2,7 @@ import component from './component.js';
 import Header from './Header.js';
 import AddTodo from './AddTodo.js';
 import TodoList from './TodoList.js';
-import todos from '../data/todos.js/index.js';
+import todos from '../data/todos.js';
 
 class App extends component {
 
@@ -22,7 +22,7 @@ class App extends component {
             }
         });
         const addTodoDOM = addTodo.render();
-        main.appenChild(addTodoDOM);
+        main.appendChild(addTodoDOM);
 
         const todoList = new TodoList({
             todos, 

@@ -1,4 +1,4 @@
-import component from './component.js';
+import component from './Component.js';
 import TodoItem from './TodoItem.js';
 
 class TodoList extends component {
@@ -6,10 +6,10 @@ class TodoList extends component {
     render() {
         const list = this.renderDOM();
 
-        const items = this.props.items;
+        const todos = this.props.todos;
         const onRemove = this.props.onRemove;
 
-        items.forEach(todo => {
+        todos.forEach(todo => {
             const todoItem = new TodoItem({ todo, onRemove });
             const todoItemDOM = todoItem.render();
             list.appendChild(todoItemDOM);
