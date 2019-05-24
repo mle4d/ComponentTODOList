@@ -1,8 +1,10 @@
 import component from './Component.js';
 import Header from './Header.js';
 import AddTodo from './AddTodo.js';
+import Filter from './Filter.js';
 import TodoList from './TodoList.js';
 import todos from '../data/todos.js';
+
 
 
 class App extends component {
