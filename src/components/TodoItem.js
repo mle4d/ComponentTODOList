@@ -5,7 +5,7 @@ class TodoItem extends component {
     render() {
         const listItem = this.renderDOM();
         const onRemove = this.props.onRemove;
-        const todo = this.props.cat;
+        const todo = this.props.todo;
         const removeButton = listItem.querySelector('button');
 
         removeButton.addEventListener('click', () => {
@@ -17,12 +17,11 @@ class TodoItem extends component {
 
     renderTemplate() {
         const todo = this.props.todo;
-        console.log(todo);
 
         return /*html*/`
         <li>
             <h2 class="name">${todo.item}</h2>
-            <input type="checkbox" checked>done
+            <input type="checkbox">done
             <button class="remove-button">X</button>
         </li>
         `;
