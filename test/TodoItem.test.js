@@ -7,12 +7,17 @@ QUnit.module('grocery items');
 test('template', assert => {
     const todo = {
         item: 'chikn',
-        completed: true
+        checked: true
     };
+    let checked = '';
+
+    if(todo.completed) {
+        checked = 'checked';
+    }
     const expected = /*html*/ `
     <li>
         <h2 class="name">${todo.item}</h2>
-        <input type="checkbox">done
+        <input type="checkbox" ${checked}>done
         <button class="remove-button">X</button>
     </li>
         `;

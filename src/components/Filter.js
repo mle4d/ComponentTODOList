@@ -4,10 +4,12 @@ class Filter extends Component {
 
     render() {
         const dom = this.renderDOM();
-        const input = dom.querySelector('input');
-        input.addEventListener('input', () => {
+        const form = dom.querySelector('form');
+        //const radio = dom.querySelector('')
+        form.addEventListener('input', () => {
             this.props.onFilter({
-                item: input.value
+                item: form.elements['filter'].value,
+                completed: form.elements['radio'].value
             });
         });
         return dom;
@@ -15,10 +17,21 @@ class Filter extends Component {
 
     renderTemplate() {
         return /*html*/`
-            <section class="filter-section">
+        <div>
+            <form class="filter-section">
                 <input class="filter" name="filter">
                 <span class="lollipop">🍭</span>
-            </section>
+                <label for="all">
+                    <input type="radio" name="radio" value="all">
+                </label>
+                <label for="Done">
+                    <input type="radio" name="radio" value="true">
+                </label>
+                <label for="To-Buy">
+                    <input type="radio" name="radio" value="false">
+                </label>
+            </form>
+        </div>
             `;
     }
 }

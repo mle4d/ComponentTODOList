@@ -13,7 +13,8 @@ class AddTodo extends component {
             const formData = new FormData(form);
 
             const newTodo = {
-                item: formData.get ('item')
+                item: formData.get ('item'),
+                completed: ''
             };
             onAdd(newTodo);
 

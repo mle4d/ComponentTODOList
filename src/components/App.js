@@ -22,7 +22,7 @@ class App extends component {
             onAdd: (newTodo) => {
                 todos.unshift(newTodo);
                 todoList.update({ todos });
-                filterTodos.update();
+               // filterTodos.update();
             }
         });
         const addTodoDOM = addTodo.render();
@@ -32,6 +32,7 @@ class App extends component {
             onFilter: filter => {
                 const filtered = filterTodos(todos, filter);
                 todoList.update({ todos: filtered });
+            
             }
         });
         main.appendChild(filter.render());
