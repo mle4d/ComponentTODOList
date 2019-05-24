@@ -1,4 +1,4 @@
-import component from './component.js';
+import component from './Component.js';
 
 class TodoItem extends component {
 

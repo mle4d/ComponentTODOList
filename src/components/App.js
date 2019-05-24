@@ -1,4 +1,4 @@
-import component from './component.js';
+import component from './Component.js';
 import Header from './Header.js';
 import AddTodo from './AddTodo.js';
 import TodoList from './TodoList.js';
