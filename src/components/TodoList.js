@@ -8,9 +8,10 @@ class TodoList extends component {
 
         const todos = this.props.todos;
         const onRemove = this.props.onRemove;
+        const onUpdate = this.props.onUpdate;
 
         todos.forEach(todo => {
-            const todoItem = new TodoItem({ todo, onRemove });
+            const todoItem = new TodoItem({ todo, onRemove, onUpdate });
             const todoItemDOM = todoItem.render();
             list.appendChild(todoItemDOM);
         });

@@ -44,6 +44,10 @@ class App extends component {
                 todos.splice(index, 1);
 
                 todoList.update({ todos });
+            },
+            onUpdate: (todoUpdate) => {
+                todoUpdate.completed = !todoUpdate.completed;
+                todoList.update({ todos });
             }
         });
         const todoListDOM = todoList.render();
