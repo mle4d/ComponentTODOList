@@ -14,7 +14,7 @@ class AddTodo extends component {
 
             const newTodo = {
                 item: formData.get ('item'),
-                completed: ''
+                completed: false
             };
             onAdd(newTodo);
 
