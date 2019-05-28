@@ -19,17 +19,19 @@ class Filter extends Component {
         return /*html*/`
         <div>
             <form class="filter-section">
+            <span class="search">Find:</span>
                 <input class="filter" name="filter">
-                <span class="lollipop">🍭</span>
-                <label for="all">
+                <p>
+                <label for="all">See all
                     <input type="radio" name="radio" value="all">
                 </label>
-                <label for="Done">
+                <label for="Done">Bought
                     <input type="radio" name="radio" value="true">
                 </label>
-                <label for="To-Buy">
+                <label for="To-Buy">To Buy
                     <input type="radio" name="radio" value="false">
                 </label>
+                </p>
             </form>
         </div>
             `;
